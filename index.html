@@ -6,15 +6,15 @@
 </head>
 <body>
   
-  <div style="margin: 88px auto; text-align: center; width: 333px; line-height: 1.9;">
+  <div style="margin: 88px auto; text-align: center; width: 444px; line-height: 1.9;">
   
-    <a class="kbes_target" href="11,23,23,19,22,69,69,24,14,2,6,18,16,69,8,15,16,8,23,4,22" title="Открыть">VKontakte</a>
+    <a class="dec_target" enc="11,23,23,19,22,71,69,69,24,14,2,6,18,16,69,8,15,16,8,23,4,22" title="Открыть">VKontakte</a>
     <br/>
-    <a class="kbes_target" href="11,23,23,19,22,69,69,26,26,26,2,9,4,6,8,5,18,18,14,2,6,18,16,69,19,21,18,9,12,15,8,2,19,11,19,12,7,31,30,30,30,31,31,32,39,36,33,36,37,37,39,38" title="Открыть">Faсеbooк</a>
+    <a class="dec_target" enc="11,23,23,19,22,71,69,69,26,26,26,2,9,4,6,8,5,18,18,14,2,6,18,16,69,19,21,18,9,12,15,8,2,19,11,19,72,12,7,73,31,30,30,30,31,31,32,39,36,33,36,37,37,39,38" title="Открыть">Faсеbooк</a>
     <br/>
-    <a class="kbes_target" href="16,4,12,15,23,18,8,9,9,8,6,23,12,26,12,14,4,0,10,16,4,12,15,2,6,18,16" title="Послать">Email 1</a>
+    <a class="dec_target" enc="16,4,12,15,23,18,71,8,9,9,8,6,23,12,26,12,14,4,0,10,16,4,12,15,2,6,18,16" title="Послать">Email 1</a>
     <br/>
-    <a class="kbes_target" href="16,4,12,15,23,18,22,23,18,21,16,5,15,4,22,23,12,14,0,28,4,2,21,25" title="Послать">Email 2</a>
+    <a class="dec_target" enc="16,4,12,15,23,18,71,22,23,18,21,16,5,15,4,22,23,12,14,0,28,4,2,21,25" title="Послать">Email 2</a>
     <br/>
     <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D0%BE%D0%B3%D0%BD%D0%B8%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D1%85_%D0%B8%D1%81%D0%BA%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9" title="Открыть">Википедия: Список когнитивных искажений</a>
     
@@ -28,20 +28,20 @@
   </div>
 
   <script>
-    document.onload = function() {
-      var _kbes_alphabet = '@+. abcdefghijklmnopqrstvuwxyz0123456789-()ABCDEFGHIJKLNMOPQRSTVUWXYZ/%';
-      function _kbes_dec(code) {
-        var a = code.split(',');
-        for (var i = 0, len = a.length; i < len; i++) {
-          a[i] = _kbes_alphabet[a[i]];
+    window.addEventListener('load', function() {
+        var _alphabet = '@+. abcdefghijklmnopqrstvuwxyz0123456789-()ABCDEFGHIJKLNMOPQRSTVUWXYZ/%:?=';
+        function _dec(str) {
+          var a = str.split(',');
+          for (var i = 0, len = a.length; i < len; i++) {
+            a[i] = _alphabet[a[i]];
+          }
+          return a.join('');
         }
-        return a.join('');
-      }
-      var targets = document.querySelector('.kbes_target');
-      for (var idx in targets) {
-        targets[idx].href = _kbes_dec(targets[idx].href);
-      }
-    }
+        var targets = document.querySelectorAll('.dec_target');
+        for (var idx in targets) {
+          targets[idx].setAttribute('href', _dec(targets[idx].getAttribute('enc')))
+        }
+    }); 
   </script>
 
 </body>
