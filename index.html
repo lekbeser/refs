@@ -37,9 +37,9 @@
           }
           return a.join('');
         }
-        var targets = document.querySelectorAll('.dec_target');
+        var targets = document.getElementsByClassName('dec_target');
         for (var idx in targets) {
-          targets[idx].setAttribute('href', _dec(targets[idx].getAttribute('enc')))
+          targets[idx].href = _dec(targets[idx].href);
         }
     }); 
   </script>
