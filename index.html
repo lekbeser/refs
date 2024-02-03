@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Refs</title>
+  <title>References</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-  
+
+  <noscript>Please, turn on JavaScript to see the page.</noscript>
+
   <div style="margin: 88px auto; text-align: center; width: 444px; line-height: 1.9;">
   
     <a class="dec_target" enc="11,23,23,19,22,71,69,69,24,14,2,6,18,16,69,8,15,16,8,23,4,22" title="Открыть">VKontakte</a>
@@ -42,6 +44,10 @@
           targets[idx].setAttribute('href', _dec(targets[idx].getAttribute('enc')));
         }
     }); 
+
+    if (location.href.indexOf('car') > -1) {
+      location.href = 'https://teemes.ru/car2sell.html';
+    }
   </script>
 
 </body>
